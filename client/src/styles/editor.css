@@ -1,0 +1,101 @@
+/* editor.css */
+.editor-layout {
+  display: flex;
+  height: 100vh;
+  padding-top: 70px;
+}
+
+.editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.editor-toolbar {
+  background: #fff;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  align-items: center;
+}
+
+.toolbar-btn {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: #475569;
+}
+.toolbar-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background: #e2e8f0;
+}
+
+.document-title-input {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #0f172a;
+  outline: none;
+  width: 300px;
+}
+
+.editor-content-area {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.document-page {
+  width: 21cm;
+  min-height: 29.7cm;
+  background: #fff;
+  padding: 2.5cm;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  outline: none;
+  font-family: 'Inter', serif;
+  font-size: 12pt;
+  line-height: 1.8;
+}
+
+.editor-sidebar {
+  width: 320px;
+  background: var(--bg-surface);
+  border-left: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+.ai-suggestion-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ai-suggestion-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}

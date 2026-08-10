@@ -1,0 +1,187 @@
+[
+  {
+    "id": "tpl_nda_01",
+    "name": "Non-Disclosure Agreement (NDA)",
+    "category": "business",
+    "description": "Standard mutual non-disclosure agreement protecting confidential information between two parties under Indian Contract Act, 1872.",
+    "icon": "🔒",
+    "fields": [
+      { "name": "effective_date", "label": "Effective Date", "type": "date", "required": true, "placeholder": "" },
+      { "name": "party_1_name", "label": "Disclosing Party Name", "type": "text", "required": true, "placeholder": "Company A" },
+      { "name": "party_1_address", "label": "Disclosing Party Address", "type": "textarea", "required": true, "placeholder": "Address" },
+      { "name": "party_2_name", "label": "Receiving Party Name", "type": "text", "required": true, "placeholder": "Company B" },
+      { "name": "party_2_address", "label": "Receiving Party Address", "type": "textarea", "required": true, "placeholder": "Address" },
+      { "name": "state_jurisdiction", "label": "Jurisdiction State", "type": "text", "required": true, "placeholder": "Maharashtra" }
+    ],
+    "template": "# NON-DISCLOSURE AGREEMENT\n\nThis Non-Disclosure Agreement (the \"Agreement\") is entered into on this {{effective_date}}, by and between:\n\n1. {{party_1_name}}, having its principal place of business at {{party_1_address}} (hereinafter referred to as the \"Disclosing Party\");\n\nAND\n\n2. {{party_2_name}}, having its principal place of business at {{party_2_address}} (hereinafter referred to as the \"Receiving Party\").\n\nWHEREAS, the Disclosing Party and the Receiving Party (collectively referred to as the \"Parties\") intend to engage in discussions regarding a potential business relationship.\n\nNOW, THEREFORE, IN CONSIDERATION of the mutual promises and covenants contained herein, the Parties agree as follows:\n\n1. CONFIDENTIAL INFORMATION\n\"Confidential Information\" shall mean any and all technical and non-technical information provided by the Disclosing Party to the Receiving Party, including but not limited to trade secrets, proprietary information, business plans, and financial data.\n\n2. OBLIGATIONS OF RECEIVING PARTY\nThe Receiving Party shall hold and maintain the Confidential Information in strictest confidence and in trust for the sole and exclusive benefit of the Disclosing Party. The Receiving Party shall not, without the prior written approval of the Disclosing Party, use for its own benefit, publish, copy, or otherwise disclose to others, or permit the use by others for their benefit or to the detriment of the Disclosing Party, any Confidential Information.\n\n3. EXCLUSIONS FROM CONFIDENTIAL INFORMATION\nReceiving Party's obligations under this Agreement do not extend to information that is: (a) publicly known at the time of disclosure or subsequently becomes publicly known through no fault of the Receiving Party; (b) discovered or created by the Receiving Party before disclosure by Disclosing Party; (c) learned by the Receiving Party through legitimate means other than from the Disclosing Party or Disclosing Party's representatives.\n\n4. TERM\nThe obligations of this Agreement shall survive for a period of three (3) years from the date of disclosure of the Confidential Information.\n\n5. GOVERNING LAW AND JURISDICTION\nThis Agreement shall be governed by and construed in accordance with the laws of India. The courts of {{state_jurisdiction}} shall have exclusive jurisdiction over any disputes arising under this Agreement.\n\nIN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first above written.\n\nFor {{party_1_name}}\nAuthorized Signatory: ___________________\nName: \nTitle:\n\nFor {{party_2_name}}\nAuthorized Signatory: ___________________\nName: \nTitle:"
+  },
+  {
+    "id": "tpl_lease_01",
+    "name": "11-Month Rental/Lease Agreement",
+    "category": "property",
+    "description": "Standard 11-month residential rent agreement suitable for Indian real estate norms to avoid mandatory registration under the Registration Act, 1908.",
+    "icon": "🏠",
+    "fields": [
+      { "name": "execution_date", "label": "Agreement Date", "type": "date", "required": true, "placeholder": "" },
+      { "name": "landlord_name", "label": "Landlord Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "tenant_name", "label": "Tenant Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "property_address", "label": "Property Address", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "monthly_rent", "label": "Monthly Rent (Rs)", "type": "number", "required": true, "placeholder": "20000" },
+      { "name": "security_deposit", "label": "Security Deposit (Rs)", "type": "number", "required": true, "placeholder": "60000" },
+      { "name": "notice_period", "label": "Notice Period (Months)", "type": "number", "required": true, "placeholder": "1" }
+    ],
+    "template": "# RENTAL AGREEMENT\n\nThis Rental Agreement is made and executed on this {{execution_date}} at [City].\n\nBETWEEN:\n{{landlord_name}}, (hereinafter referred to as the \"Landlord\" or \"Lessor\", which expression shall mean and include his heirs, legal representatives, executors, administrators, and assigns) of the ONE PART;\n\nAND\n{{tenant_name}}, (hereinafter referred to as the \"Tenant\" or \"Lessee\", which expression shall mean and include his heirs, legal representatives, executors, administrators, and assigns) of the OTHER PART.\n\nWHEREAS the Landlord is the absolute owner of the residential property situated at {{property_address}} (hereinafter referred to as the \"Schedule Property\").\n\nAND WHEREAS the Tenant has approached the Landlord to let out the Schedule Property on rent for residential purposes only, and the Landlord has agreed to the same on the following terms and conditions:\n\n1. TERM OF TENANCY\nThe tenancy shall be for a period of 11 (Eleven) months commencing from the date of execution of this Agreement.\n\n2. RENT AND DEPOSIT\na) The Tenant shall pay a monthly rent of Rs. {{monthly_rent}}/- on or before the 5th day of every English calendar month.\nb) The Tenant has paid a sum of Rs. {{security_deposit}}/- as an interest-free refundable Security Deposit to the Landlord.\n\n3. MAINTENANCE AND UTILITIES\nThe Tenant shall pay electricity and water charges directly to the respective authorities as per the bills generated for the Schedule Property during the tenancy period.\n\n4. USAGE\nThe Tenant shall use the Schedule Property strictly for residential purposes and shall not conduct any illegal, commercial, or nuisance activities therein.\n\n5. TERMINATION\nEither party may terminate this Agreement by giving {{notice_period}} month(s) written notice to the other party.\n\nIN WITNESS WHEREOF the parties hereto have set their hands on the day, month, and year first above written.\n\nLANDLORD: ____________________\n{{landlord_name}}\n\nTENANT: ____________________\n{{tenant_name}}\n\nWITNESS 1: ___________________\nWITNESS 2: ___________________"
+  },
+  {
+    "id": "tpl_emp_01",
+    "name": "Employment Contract",
+    "category": "corporate",
+    "description": "Comprehensive employment agreement defining terms, CTC, non-compete, and termination clauses compliant with Indian Labour Laws.",
+    "icon": "👔",
+    "fields": [
+      { "name": "company_name", "label": "Company Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "employee_name", "label": "Employee Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "designation", "label": "Designation/Title", "type": "text", "required": true, "placeholder": "Software Engineer" },
+      { "name": "joining_date", "label": "Date of Joining", "type": "date", "required": true, "placeholder": "" },
+      { "name": "ctc", "label": "Annual CTC (Rs)", "type": "number", "required": true, "placeholder": "" },
+      { "name": "probation_period", "label": "Probation Period (Months)", "type": "number", "required": true, "placeholder": "3" }
+    ],
+    "template": "# EMPLOYMENT AGREEMENT\n\nThis Employment Agreement is executed on [Date], by and between:\n\n{{company_name}}, a company incorporated under the Companies Act, 2013 (hereinafter \"Employer\");\n\nAND\n\n{{employee_name}} (hereinafter \"Employee\").\n\n1. POSITION AND DUTIES\nThe Employer agrees to employ the Employee in the capacity of {{designation}}, commencing from {{joining_date}}. The Employee agrees to devote their full working time and best efforts to the business and affairs of the Employer.\n\n2. COMPENSATION\nThe Employee's Cost to Company (CTC) shall be Rs. {{ctc}} per annum, subject to applicable statutory deductions including TDS, PF, and Professional Tax as per Indian laws.\n\n3. PROBATION\nThe Employee shall be on probation for a period of {{probation_period}} months from the date of joining. The Employer reserves the right to extend the probation period or confirm the employment based on performance.\n\n4. CONFIDENTIALITY AND INTELLECTUAL PROPERTY\nThe Employee acknowledges that all intellectual property created during the course of employment shall be the sole and exclusive property of the Employer. The Employee agrees not to disclose any confidential information of the Employer to any third party.\n\n5. NON-COMPETE\nDuring the term of employment and for a period of 12 months thereafter, the Employee shall not directly or indirectly engage in any business that competes with the business of the Employer.\n\n6. TERMINATION\nEither party may terminate this employment by giving 30 days written notice or salary in lieu thereof. The Employer may terminate the employment immediately for cause (e.g., fraud, misconduct, breach of agreement) without notice.\n\nFor {{company_name}}\n\n___________________\nAuthorized Signatory\n\nAccepted and Agreed:\n\n___________________\n{{employee_name}}"
+  },
+  {
+    "id": "tpl_poa_01",
+    "name": "Power of Attorney (General)",
+    "category": "personal",
+    "description": "General Power of Attorney to authorize a trusted person to manage legal and financial affairs under the Powers of Attorney Act, 1882.",
+    "icon": "⚖️",
+    "fields": [
+      { "name": "principal_name", "label": "Principal Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "principal_address", "label": "Principal Address", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "agent_name", "label": "Attorney/Agent Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "agent_relation", "label": "Relation to Principal", "type": "text", "required": true, "placeholder": "Son/Daughter/Friend" },
+      { "name": "date", "label": "Date", "type": "date", "required": true, "placeholder": "" }
+    ],
+    "template": "# GENERAL POWER OF ATTORNEY\n\nKNOW ALL MEN BY THESE PRESENTS that I, {{principal_name}}, residing at {{principal_address}} (hereinafter referred to as the \"Principal\"), do hereby nominate, constitute and appoint {{agent_name}}, my {{agent_relation}}, residing at [Agent Address], to be my true and lawful Attorney (hereinafter referred to as the \"Attorney\") to do, execute, and perform all or any of the following acts, deeds, and things in my name and on my behalf:\n\n1. To demand, collect, and receive all monies, debts, dues, and properties that may become due and payable to me.\n2. To open, operate, and close bank accounts in my name and to draw, sign, and endorse cheques, drafts, and other negotiable instruments.\n3. To manage, control, and administer my immovable properties, including leasing, repairing, and collecting rent.\n4. To represent me before any Government, Municipal, Tax, or Judicial authority in India.\n5. To sign, execute, and deliver all agreements, deeds, contracts, and documents required for the aforesaid purposes.\n\nAND I hereby agree to ratify and confirm all acts, deeds, and things lawfully done by my said Attorney by virtue of these presents.\n\nIN WITNESS WHEREOF, I have executed this General Power of Attorney on this {{date}} at [Place].\n\n___________________\n{{principal_name}} (Principal)\n\nAccepted by:\n___________________\n{{agent_name}} (Attorney)\n\nWitness 1: ___________________\nWitness 2: ___________________"
+  },
+  {
+    "id": "tpl_will_01",
+    "name": "Will / Testament",
+    "category": "personal",
+    "description": "A legally binding Last Will and Testament for the distribution of assets as per the Indian Succession Act, 1925.",
+    "icon": "📜",
+    "fields": [
+      { "name": "testator_name", "label": "Testator Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "age", "label": "Age", "type": "number", "required": true, "placeholder": "" },
+      { "name": "father_name", "label": "Father's Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "executor_name", "label": "Executor Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "beneficiary_details", "label": "Beneficiary Details (Brief)", "type": "textarea", "required": true, "placeholder": "" }
+    ],
+    "template": "# LAST WILL AND TESTAMENT\n\nI, {{testator_name}}, son/daughter of {{father_name}}, aged about {{age}} years, residing at [Address], being of sound mind, memory, and understanding, and free from any undue influence, coercion, or fraud, do hereby make, publish, and declare this to be my Last Will and Testament, hereby revoking all former Wills and Codicils made by me.\n\n1. APPOINTMENT OF EXECUTOR\nI hereby appoint {{executor_name}} as the sole Executor of this Will. In the event they are unable or unwilling to act as Executor, I appoint [Alternate Executor Name] in their place.\n\n2. DECLARATION OF ASSETS\nI am the absolute owner of the properties (movable and immovable) which are self-acquired, and I have the absolute right to dispose of them as I deem fit.\n\n3. BEQUESTS\nI bequeath my assets and properties as follows:\n{{beneficiary_details}}\n\n4. RESIDUARY CLAUSE\nAny other property, movable or immovable, which I may acquire in the future or which may not have been specifically mentioned herein, shall be given to [Name of Residuary Beneficiary].\n\n5. NO CONTEST CLAUSE\nIf any beneficiary under this Will contests or challenges this Will or any of its provisions in any court, their share or interest shall be forfeited.\n\nIN WITNESS WHEREOF, I, {{testator_name}}, have signed this Will on this [Date] at [Place].\n\n___________________\n{{testator_name}} (Testator)\n\nWITNESSES\nWe, the undersigned, certify that the Testator has signed this Will in our presence, and we, at his/her request, in his/her presence, and in the presence of each other, have signed our names as witnesses.\n\n1. Name: _______________ Signature: _______________\n2. Name: _______________ Signature: _______________"
+  },
+  {
+    "id": "tpl_part_01",
+    "name": "Partnership Deed",
+    "category": "business",
+    "description": "Standard Partnership Deed under the Indian Partnership Act, 1932 detailing profit sharing, capital, and dispute resolution.",
+    "icon": "🤝",
+    "fields": [
+      { "name": "firm_name", "label": "Firm Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "partner1_name", "label": "First Partner", "type": "text", "required": true, "placeholder": "" },
+      { "name": "partner2_name", "label": "Second Partner", "type": "text", "required": true, "placeholder": "" },
+      { "name": "nature_of_business", "label": "Nature of Business", "type": "text", "required": true, "placeholder": "" },
+      { "name": "start_date", "label": "Commencement Date", "type": "date", "required": true, "placeholder": "" },
+      { "name": "profit_ratio", "label": "Profit Sharing Ratio (e.g. 50:50)", "type": "text", "required": true, "placeholder": "50:50" }
+    ],
+    "template": "# PARTNERSHIP DEED\n\nTHIS DEED OF PARTNERSHIP is made on this [Date] by and between:\n\n1. {{partner1_name}}, residing at [Address 1] (hereinafter referred to as the \"First Partner\");\nAND\n2. {{partner2_name}}, residing at [Address 2] (hereinafter referred to as the \"Second Partner\").\n\nWHEREAS the parties hereto have decided to form a partnership to carry on the business of {{nature_of_business}} under the name and style of \"{{firm_name}}\", and wish to reduce the terms and conditions of their partnership into writing.\n\nNOW THIS DEED WITNESSETH AS FOLLOWS:\n\n1. NAME AND COMMENCEMENT\nThe partnership business shall be carried on under the name of \"{{firm_name}}\" and shall be deemed to have commenced on {{start_date}}.\n\n2. PLACE OF BUSINESS\nThe principal place of business shall be at [Business Address] or at such other place as the partners may mutually decide.\n\n3. CAPITAL\nThe initial capital of the firm shall be contributed by the partners in such proportion as they may mutually agree from time to time.\n\n4. PROFIT AND LOSS SHARING\nThe net profits and losses of the partnership business shall be shared between the partners in the ratio of {{profit_ratio}}.\n\n5. BANK ACCOUNT\nA bank account shall be opened in the name of the firm and shall be operated jointly or severally as agreed by the partners.\n\n6. DISPUTE RESOLUTION\nAny dispute or difference arising between the partners regarding the partnership affairs shall be settled by arbitration in accordance with the Arbitration and Conciliation Act, 1996.\n\nIN WITNESS WHEREOF, the parties have set their hands on the day and year first mentioned above.\n\n___________________\n{{partner1_name}}\n\n___________________\n{{partner2_name}}\n\nWITNESSES:\n1. ___________________\n2. ___________________"
+  },
+  {
+    "id": "tpl_sale_01",
+    "name": "Agreement for Sale",
+    "category": "property",
+    "description": "Agreement for the sale of property/goods governed by the Transfer of Property Act, 1882 or Sale of Goods Act, 1930.",
+    "icon": "🏢",
+    "fields": [
+      { "name": "seller_name", "label": "Seller Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "buyer_name", "label": "Buyer Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "property_description", "label": "Property/Asset Description", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "total_consideration", "label": "Total Consideration (Rs)", "type": "number", "required": true, "placeholder": "" },
+      { "name": "advance_payment", "label": "Advance Payment (Rs)", "type": "number", "required": true, "placeholder": "" }
+    ],
+    "template": "# AGREEMENT FOR SALE\n\nThis Agreement for Sale is made and executed on this [Date] at [Place],\n\nBETWEEN\n{{seller_name}}, residing at [Seller Address] (hereinafter referred to as the \"Vendor/Seller\");\n\nAND\n{{buyer_name}}, residing at [Buyer Address] (hereinafter referred to as the \"Purchaser/Buyer\").\n\nWHEREAS the Vendor is the absolute owner of the property/asset described as: {{property_description}}.\n\nAND WHEREAS the Vendor has agreed to sell and the Purchaser has agreed to purchase the said property/asset for a total consideration of Rs. {{total_consideration}}/-.\n\nNOW THIS AGREEMENT WITNESSETH:\n\n1. CONSIDERATION\nThe Purchaser has paid an advance sum of Rs. {{advance_payment}}/- to the Vendor by cheque/DD/transfer on [Date], the receipt of which the Vendor hereby acknowledges. The balance sum shall be paid at the time of execution of the final Sale Deed.\n\n2. TITLE AND ENCUMBRANCES\nThe Vendor declares that the property is free from all encumbrances, charges, mortgages, and legal disputes. The Vendor shall provide all necessary original documents to the Purchaser for verification.\n\n3. POSSESSION\nVacant and peaceful possession of the property shall be handed over to the Purchaser at the time of registration of the Sale Deed and full payment of the consideration.\n\n4. BREACH\nIf the Purchaser fails to pay the balance amount within the stipulated time, the advance paid shall be forfeited. If the Vendor fails to execute the Sale Deed, the Purchaser shall be entitled to specific performance and refund of the advance with interest.\n\nIN WITNESS WHEREOF, the parties have signed this Agreement.\n\n___________________\nVENDOR: {{seller_name}}\n\n___________________\nPURCHASER: {{buyer_name}}\n\nWitness 1: ___________________\nWitness 2: ___________________"
+  },
+  {
+    "id": "tpl_sla_01",
+    "name": "Service Level Agreement (SLA)",
+    "category": "corporate",
+    "description": "Standard SLA defining metrics, responsibilities, and penalties between a service provider and client.",
+    "icon": "📈",
+    "fields": [
+      { "name": "provider_name", "label": "Service Provider", "type": "text", "required": true, "placeholder": "" },
+      { "name": "client_name", "label": "Client Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "service_description", "label": "Service Description", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "uptime_percentage", "label": "Target Uptime (%)", "type": "number", "required": true, "placeholder": "99.9" },
+      { "name": "penalty_terms", "label": "Penalty Terms", "type": "textarea", "required": true, "placeholder": "" }
+    ],
+    "template": "# SERVICE LEVEL AGREEMENT\n\nThis Service Level Agreement (\"SLA\") is entered into on [Date], between:\n\n{{provider_name}} (\"Service Provider\")\nAND\n{{client_name}} (\"Client\")\n\n1. SCOPE OF SERVICES\nThe Service Provider agrees to provide the following services: {{service_description}}.\n\n2. SERVICE LEVELS AND UPTIME\nThe Service Provider guarantees an uptime of {{uptime_percentage}}% for the services provided, excluding scheduled maintenance periods. Uptime will be measured on a monthly basis.\n\n3. SUPPORT AND RESPONSE TIMES\nCritical issues (Priority 1) will receive a response within 1 hour. Moderate issues (Priority 2) within 4 hours, and minor requests within 24 hours during standard business hours (IST).\n\n4. SERVICE CREDITS / PENALTIES\nIn the event the Service Provider fails to meet the guaranteed uptime, the Client shall be entitled to service credits as follows:\n{{penalty_terms}}\n\n5. TERMINATION\nEither party may terminate this SLA with 30 days written notice if there is a material breach by the other party that is not cured within the notice period.\n\n6. GOVERNING LAW\nThis SLA shall be governed by the laws of India.\n\n___________________\nFor {{provider_name}}\n\n___________________\nFor {{client_name}}"
+  },
+  {
+    "id": "tpl_aff_01",
+    "name": "General Affidavit",
+    "category": "personal",
+    "description": "A sworn statement of facts for general legal and administrative purposes.",
+    "icon": "✍️",
+    "fields": [
+      { "name": "deponent_name", "label": "Deponent Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "father_name", "label": "Father's/Husband's Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "age", "label": "Age", "type": "number", "required": true, "placeholder": "" },
+      { "name": "address", "label": "Address", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "statement_facts", "label": "Statement of Facts", "type": "textarea", "required": true, "placeholder": "" }
+    ],
+    "template": "# AFFIDAVIT\n\nI, {{deponent_name}}, son/daughter/wife of {{father_name}}, aged about {{age}} years, residing at {{address}}, do hereby solemnly affirm and state on oath as follows:\n\n1. That I am a citizen of India.\n\n2. That the following facts are true and correct to the best of my knowledge and belief:\n{{statement_facts}}\n\n3. That I am making this affidavit to be produced before the concerned authorities as documentary evidence.\n\nVERIFICATION\nI, the above-named deponent, do hereby verify that the contents of this affidavit in paragraphs 1 to 3 are true and correct to the best of my knowledge and belief. No part of it is false, and nothing material has been concealed therefrom.\n\nVerified at [Place] on this [Date].\n\n___________________\nDEPONENT\n\nIdentified by:\nAdvocate / Notary Public"
+  },
+  {
+    "id": "tpl_notice_01",
+    "name": "Legal Notice",
+    "category": "business",
+    "description": "Formal legal notice format used by advocates to demand action, payment, or cease-and-desist.",
+    "icon": "⚖️",
+    "fields": [
+      { "name": "sender_name", "label": "Sender Name (Client)", "type": "text", "required": true, "placeholder": "" },
+      { "name": "recipient_name", "label": "Recipient Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "recipient_address", "label": "Recipient Address", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "subject", "label": "Subject", "type": "text", "required": true, "placeholder": "" },
+      { "name": "grievance", "label": "Details of Grievance", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "demand", "label": "Demand/Relief Sought", "type": "textarea", "required": true, "placeholder": "" }
+    ],
+    "template": "# LEGAL NOTICE\n\nREGISTERED POST WITH A/D\n\nDate: [Date]\n\nTo,\n{{recipient_name}}\n{{recipient_address}}\n\nSubject: Legal Notice regarding {{subject}}\n\nSir/Madam,\n\nUnder the instructions from and on behalf of my client {{sender_name}}, I hereby serve upon you the following legal notice:\n\n1. That my client states that: {{grievance}}.\n\n2. That your actions/inactions constitute a breach of trust, legal obligation, and have caused significant loss and hardship to my client.\n\n3. Therefore, through this legal notice, you are called upon to: {{demand}}.\n\n4. You are required to comply with the above demand within 15 days from the receipt of this notice, failing which my client shall be constrained to initiate civil/criminal proceedings against you in a competent court of law, entirely at your risk as to costs and consequences.\n\nA copy of this notice is kept in my office for record and further necessary action.\n\nYours faithfully,\n\n___________________\nAdvocate\n[Advocate Address & Contact]"
+  },
+  {
+    "id": "tpl_mou_01",
+    "name": "Memorandum of Understanding (MoU)",
+    "category": "corporate",
+    "description": "Non-binding or semi-binding agreement outlining mutual intent between parties for a future project or venture.",
+    "icon": "📝",
+    "fields": [
+      { "name": "party_a", "label": "Party A", "type": "text", "required": true, "placeholder": "" },
+      { "name": "party_b", "label": "Party B", "type": "text", "required": true, "placeholder": "" },
+      { "name": "purpose", "label": "Purpose of MoU", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "duration", "label": "Validity Period (Months)", "type": "number", "required": true, "placeholder": "12" }
+    ],
+    "template": "# MEMORANDUM OF UNDERSTANDING\n\nThis Memorandum of Understanding (MoU) is made on this [Date] between:\n\n{{party_a}} (hereinafter referred to as \"Party A\")\nAND\n{{party_b}} (hereinafter referred to as \"Party B\")\n\n1. PURPOSE\nThe purpose of this MoU is to establish a framework for cooperation between the Parties regarding: {{purpose}}.\n\n2. ROLES AND RESPONSIBILITIES\nBoth Parties agree to work together in good faith to achieve the common goals set out in this MoU. Specific obligations, financial commitments, and operational details will be defined in a separate definitive agreement to be executed subsequently.\n\n3. CONFIDENTIALITY\nAny confidential information exchanged during the course of this MoU shall be kept strictly confidential and shall not be disclosed to any third party without prior written consent.\n\n4. VALIDITY AND TERMINATION\nThis MoU shall remain valid for a period of {{duration}} months from the date of signing. Either Party may terminate this MoU by providing 30 days written notice to the other Party.\n\n5. NON-BINDING NATURE\nExcept for the provisions relating to Confidentiality, this MoU is not intended to be legally binding and does not create any legal or financial obligations between the Parties.\n\nIN WITNESS WHEREOF, the Parties have signed this MoU.\n\n___________________\nFor {{party_a}}\n\n___________________\nFor {{party_b}}"
+  },
+  {
+    "id": "tpl_freelance_01",
+    "name": "Freelancer Agreement",
+    "category": "business",
+    "description": "Contract for engaging an independent contractor/freelancer, covering IP rights, payment, and scope of work.",
+    "icon": "💻",
+    "fields": [
+      { "name": "client_name", "label": "Client Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "freelancer_name", "label": "Freelancer Name", "type": "text", "required": true, "placeholder": "" },
+      { "name": "scope_of_work", "label": "Scope of Work", "type": "textarea", "required": true, "placeholder": "" },
+      { "name": "payment_fee", "label": "Total Fee (Rs)", "type": "number", "required": true, "placeholder": "" },
+      { "name": "deadline", "label": "Project Deadline", "type": "date", "required": true, "placeholder": "" }
+    ],
+    "template": "# FREELANCER AGREEMENT\n\nThis Freelancer Agreement is entered into on [Date] between:\n\n{{client_name}} (\"Client\")\nAND\n{{freelancer_name}} (\"Freelancer/Independent Contractor\")\n\n1. SCOPE OF WORK\nThe Freelancer agrees to perform the following services for the Client: {{scope_of_work}}. The work shall be completed by {{deadline}}.\n\n2. PAYMENT\nThe Client agrees to pay the Freelancer a total fee of Rs. {{payment_fee}}/-. Payment shall be made within 15 days of invoice submission upon completion and acceptance of the work. Applicable TDS under section 194J of the Income Tax Act will be deducted.\n\n3. INDEPENDENT CONTRACTOR STATUS\nThe Freelancer is an independent contractor, not an employee of the Client. The Freelancer is responsible for their own taxes and benefits.\n\n4. INTELLECTUAL PROPERTY\nUpon full payment, all intellectual property rights in the work product created under this Agreement shall be exclusively assigned to and owned by the Client.\n\n5. CONFIDENTIALITY\nThe Freelancer agrees not to disclose any confidential information obtained from the Client during the course of the project.\n\n6. TERMINATION\nEither party may terminate this Agreement with 7 days written notice. In the event of termination, the Client shall pay for the work completed up to the date of termination.\n\n___________________\nClient: {{client_name}}\n\n___________________\nFreelancer: {{freelancer_name}}"
+  }
+]

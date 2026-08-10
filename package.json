@@ -1,0 +1,16 @@
+{
+  "name": "sih-legal-documentation-assistant",
+  "version": "1.0.0",
+  "description": "AI-Powered Legal Documentation Assistant - Smart India Hackathon Project",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "start": "cd server && npm start",
+    "install:all": "cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": ["legal", "ai", "documentation", "sih", "india", "ollama"],
+  "author": "ashwin554",
+  "license": "MIT"
+}
