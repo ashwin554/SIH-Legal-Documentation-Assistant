@@ -47,9 +47,16 @@ router.post('/suggest', async (req, res) => {
 
 router.post('/chat', async (req, res) => {
     try {
-        const { message, history } = req.body;
+        const { message, history, type } = req.body;
+        
+        let sysContent = "You are an AI-Powered Legal Documentation Assistant specialized in Indian law. Provide accurate, professional, and helpful legal information. Note: You are an AI and must advise users to consult a qualified human lawyer for formal legal representation.";
+        
+        if (type !== 'qa') {
+            sysContent = "You are an expert Legal Draftsman specializing in Indian law. You are speaking with a user who is using a document editor. When asked to draft or revise a document, output ONLY the raw document text formatted in Markdown. Do NOT include any conversational filler, greetings, explanations, disclaimers, or advice whatsoever (e.g., do not say 'Here is the draft', 'Please note', 'Consult a lawyer', etc.). Start directly with the document title and end exactly after the signature blocks.";
+        }
+        
         const messages = [
-            { role: 'system', content: "You are an AI-Powered Legal Documentation Assistant specialized in Indian law. Provide accurate, professional, and helpful legal information. Note: You are an AI and must advise users to consult a qualified human lawyer for formal legal representation." },
+            { role: 'system', content: sysContent },
             ...(history || []),
             { role: 'user', content: message }
         ];

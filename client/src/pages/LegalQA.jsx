@@ -51,10 +51,9 @@ const LegalQA = () => {
 
   const handleSaveDocument = async () => {
     try {
-      const draftContent = messages
-        .filter(m => m.role === 'assistant')
-        .map(m => marked.parse(m.content))
-        .join('<hr/>');
+      const assistantMessages = messages.filter(m => m.role === 'assistant');
+      const lastDraft = assistantMessages[assistantMessages.length - 1];
+      const draftContent = marked.parse(lastDraft ? lastDraft.content : '');
         
       const res = await api.documents.create({
         title: 'Q&A Document',
