@@ -20,7 +20,7 @@ const Templates = () => {
   const fetchTemplates = async () => {
     try {
       const res = await api.templates.getAll();
-      setTemplates(res.templates || []);
+      setTemplates(Array.isArray(res) ? res : (res.templates || []));
     } catch (err) {
       console.error(err);
       // Mock data for demo
