@@ -73,7 +73,7 @@ const TemplateWizard = () => {
       });
       
       // Navigate to editor
-      navigate(`/documents/${res.document.id || res.document._id}`);
+      navigate(`/documents/${res.id || res._id}`);
     } catch (err) {
       console.error(err);
       alert('Failed to generate document. Mock mode continuing...');

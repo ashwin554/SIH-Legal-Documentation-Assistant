@@ -57,7 +57,7 @@ const AIChat = () => {
         content: draftContent,
         status: 'draft'
       });
-      navigate(`/documents/${res.document.id || res.document._id}`);
+      navigate(`/documents/${res.id || res._id}`);
     } catch (err) {
       alert('Mock mode: Redirecting to dashboard...');
       navigate('/dashboard');
