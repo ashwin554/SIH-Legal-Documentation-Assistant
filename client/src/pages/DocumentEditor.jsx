@@ -60,16 +60,38 @@ const DocumentEditor = () => {
 
   const handleExportPDF = () => {
     try {
-      const element = editorRef.current;
+      const tempDiv = window.document.createElement('div');
+      tempDiv.innerHTML = editorRef.current.innerHTML;
+      
+      // Apply clean, explicit styling for the PDF render
+      tempDiv.style.padding = '20px';
+      tempDiv.style.color = '#000000';
+      tempDiv.style.background = '#ffffff';
+      tempDiv.style.textAlign = 'left';
+      tempDiv.style.fontFamily = 'serif';
+      tempDiv.style.fontSize = '12pt';
+      tempDiv.style.lineHeight = '1.8';
+      
+      // Force all text elements to be black to override dark mode CSS
+      const elements = tempDiv.querySelectorAll('*');
+      elements.forEach(el => {
+        el.style.color = '#000000';
+        el.style.textAlign = 'left';
+      });
+
+      window.document.body.appendChild(tempDiv);
+
       const opt = {
         margin:       15,
         filename:     `${title || 'Document'}.pdf`,
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
+        html2canvas:  { scale: 2, windowWidth: 800 },
         jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
       
-      html2pdf().from(element).set(opt).save();
+      html2pdf().from(tempDiv).set(opt).save().then(() => {
+        window.document.body.removeChild(tempDiv);
+      });
     } catch (err) {
       alert('PDF Export failed');
     }
