@@ -21,11 +21,11 @@ const DocumentEditor = () => {
   const fetchDocument = async () => {
     try {
       const res = await api.documents.getById(id);
-      setDocument(res.document);
-      setTitle(res.document.title);
-      setStatus(res.document.status);
+      setDocument(res);
+      setTitle(res.title);
+      setStatus(res.status);
       if (editorRef.current) {
-        editorRef.current.innerHTML = res.document.content;
+        editorRef.current.innerHTML = res.content;
       }
     } catch (err) {
       console.error(err);
