@@ -47,6 +47,9 @@ const AIChat = () => {
       }, 1500);
     } finally {
       setIsTyping(false);
+    }
+  };
+
   const handleSaveDocument = async () => {
     try {
       const draftContent = messages
