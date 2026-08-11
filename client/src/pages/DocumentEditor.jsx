@@ -4,6 +4,7 @@ import { ArrowLeft, Save, Download, Bold, Italic, List, Heading, Bot } from 'luc
 import LoadingSpinner from '../components/LoadingSpinner';
 import { api } from '../utils/api';
 import { marked } from 'marked';
+import html2pdf from 'html2pdf.js';
 
 const DocumentEditor = () => {
   const { id } = useParams();
@@ -57,18 +58,20 @@ const DocumentEditor = () => {
     }
   };
 
-  const handleExportPDF = async () => {
+  const handleExportPDF = () => {
     try {
-      const blob = await api.documents.exportPDF(id);
-      const url = window.URL.createObjectURL(blob);
-      const a = window.document.createElement('a');
-      a.href = url;
-      a.download = `${title}.pdf`;
-      window.document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
+      const element = editorRef.current;
+      const opt = {
+        margin:       15,
+        filename:     `${title || 'Document'}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      
+      html2pdf().from(element).set(opt).save();
     } catch (err) {
-      alert('PDF Export not available in demo mode');
+      alert('PDF Export failed');
     }
   };
 

@@ -53,8 +53,7 @@
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .document-page {
@@ -67,6 +66,9 @@
   font-family: 'Inter', serif;
   font-size: 12pt;
   line-height: 1.8;
+  margin: 0 auto;
+  text-align: left;
+  display: inline-block;
 }
 
 .editor-sidebar {
