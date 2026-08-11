@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import ChatMessage from '../components/ChatMessage';
 import { api } from '../utils/api';
+import { marked } from 'marked';
 
 const AIChat = () => {
   const navigate = useNavigate();
@@ -46,12 +47,13 @@ const AIChat = () => {
       }, 1500);
     } finally {
       setIsTyping(false);
-    }
-  };
-
   const handleSaveDocument = async () => {
     try {
-      const draftContent = messages.filter(m => m.role === 'assistant').map(m => `<p>${m.content}</p>`).join('<hr/>');
+      const draftContent = messages
+        .filter(m => m.role === 'assistant')
+        .map(m => marked.parse(m.content))
+        .join('<hr/>');
+        
       const res = await api.documents.create({
         title: 'AI Drafted Document',
         content: draftContent,

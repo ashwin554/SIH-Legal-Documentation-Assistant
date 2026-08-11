@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { api } from '../utils/api';
+import { marked } from 'marked';
 
 const TemplateWizard = () => {
   const { id } = useParams();
@@ -13,35 +14,23 @@ const TemplateWizard = () => {
   const [formData, setFormData] = useState({});
   const [generating, setGenerating] = useState(false);
 
-  // Mock template data for the wizard
   useEffect(() => {
-    // In a real app, fetch template by ID:
-    // api.templates.getById(id).then(res => setTemplate(res.template));
-    
-    // Using mock for demo
-    setTimeout(() => {
+    api.templates.getById(id).then(res => {
+      const step1Fields = res.fields.slice(0, Math.ceil(res.fields.length / 2));
+      const step2Fields = res.fields.slice(Math.ceil(res.fields.length / 2));
+      
       setTemplate({
-        id,
-        name: 'Non-Disclosure Agreement',
+        ...res,
         steps: [
-          {
-            title: 'Party Details',
-            fields: [
-              { name: 'party1Name', label: 'Disclosing Party Name', type: 'text', placeholder: 'e.g. Acme Corp' },
-              { name: 'party2Name', label: 'Receiving Party Name', type: 'text', placeholder: 'e.g. Jane Doe' }
-            ]
-          },
-          {
-            title: 'Agreement Terms',
-            fields: [
-              { name: 'jurisdiction', label: 'Jurisdiction (State)', type: 'text', placeholder: 'e.g. Maharashtra' },
-              { name: 'duration', label: 'Duration of Confidentiality (Years)', type: 'number', placeholder: 'e.g. 2' }
-            ]
-          }
+          { title: 'Primary Details', fields: step1Fields },
+          { title: 'Additional Details', fields: step2Fields }
         ]
       });
       setLoading(false);
-    }, 1000);
+    }).catch(err => {
+      console.error(err);
+      navigate('/templates');
+    });
   }, [id]);
 
   const handleInputChange = (e) => {
@@ -59,25 +48,27 @@ const TemplateWizard = () => {
   const handleGenerate = async () => {
     setGenerating(true);
     try {
-      // Send data to AI backend to generate doc
-      const prompt = `Generate a ${template.name} with these details: ${JSON.stringify(formData)}`;
+      let draftText = template.template;
+      // replace all placeholders like {{field_name}}
+      Object.keys(formData).forEach(key => {
+        const regex = new RegExp(`{{${key}}}`, 'g');
+        draftText = draftText.replace(regex, formData[key] || `[${key}]`);
+      });
       
-      // We will create the document first
-      const draftContent = `<h1>${template.name}</h1><p>This is an AI drafted document based on: ${JSON.stringify(formData)}</p><p>Edit this draft in the editor.</p>`;
+      const htmlContent = marked.parse(draftText);
       
       const res = await api.documents.create({
-        title: `${template.name} - ${formData.party1Name || 'Draft'}`,
-        content: draftContent,
+        title: `${template.name} - Draft`,
+        content: htmlContent,
         template_id: id,
         status: 'draft'
       });
       
-      // Navigate to editor
       navigate(`/documents/${res.id || res._id}`);
     } catch (err) {
       console.error(err);
-      alert('Failed to generate document. Mock mode continuing...');
-      navigate('/dashboard'); // Fallback
+      alert('Failed to generate document.');
+      navigate('/dashboard'); 
     } finally {
       setGenerating(false);
     }
