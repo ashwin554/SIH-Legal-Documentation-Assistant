@@ -2,8 +2,6 @@ import React from 'react';
 import { User, Bot } from 'lucide-react';
 
 const ChatMessage = ({ message, isTyping }) => {
-  const isUser = message.role === 'user';
-  
   if (isTyping) {
     return (
       <div className="message-wrapper assistant">
@@ -21,6 +19,7 @@ const ChatMessage = ({ message, isTyping }) => {
     );
   }
 
+  const isUser = message?.role === 'user';
   return (
     <div className={`message-wrapper ${isUser ? 'user' : 'assistant'}`}>
       {!isUser && (
