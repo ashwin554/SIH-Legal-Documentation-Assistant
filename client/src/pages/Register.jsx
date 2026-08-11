@@ -34,7 +34,7 @@ const Register = () => {
     <div className="auth-page fade-in">
       <div className="glass-card auth-card">
         <h2>Create Account</h2>
-        <p className="auth-subtitle">Join Nayay Shala to automate your legal workflow</p>
+        <p className="auth-subtitle">Join Nayay Shala Legal Sahayak to automate your legal workflow</p>
         
         {error && <div className="error-message">{error}</div>}
         

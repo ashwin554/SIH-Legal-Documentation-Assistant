@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className={`navbar ${!isLanding || isScrolled ? 'solid' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="nav-brand">
-          <span className="gradient-text">Nayay</span> Shala
+          <span className="gradient-text">Nayay Shala</span> Legal Sahayak
         </Link>
 
         <div className={`nav-links ${isMobileOpen ? 'mobile-open' : ''}`}>

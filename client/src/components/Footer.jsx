@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col">
-            <h3 className="nav-brand" style={{ marginBottom: '1rem' }}><span className="gradient-text">Nayay</span> Shala</h3>
+            <h3 className="nav-brand" style={{ marginBottom: '1rem' }}><span className="gradient-text">Nayay Shala</span> Legal Sahayak</h3>
             <p style={{ color: 'var(--text-secondary)' }}>AI-Powered Legal Documentation Assistant for everyone.</p>
           </div>
           <div className="footer-col">
@@ -36,8 +36,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>Disclaimer: Nayay Shala is an AI assistant and does not provide formal legal advice. Always consult with a qualified professional for complex legal matters.</p>
-          <p style={{ marginTop: '1rem' }}>&copy; {new Date().getFullYear()} Nayay Shala. Made for SIH 2024.</p>
+          <p>Disclaimer: Nayay Shala Legal Sahayak is an AI assistant and does not provide formal legal advice. Always consult with a qualified professional for complex legal matters.</p>
+          <p style={{ marginTop: '1rem' }}>&copy; {new Date().getFullYear()} Nayay Shala Legal Sahayak. Made for SIH 2024.</p>
         </div>
       </div>
     </footer>

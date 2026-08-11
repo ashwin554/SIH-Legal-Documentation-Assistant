@@ -46,7 +46,7 @@ const Landing = () => {
       {/* Features Section */}
       <section className="features-section">
         <div className="container">
-          <h2 className="section-title">Why Choose <span className="gradient-text">Nayay Shala</span></h2>
+          <h2 className="section-title">Why Choose <span className="gradient-text">Nayay Shala Legal Sahayak</span></h2>
           <div className="features-grid">
             <FeatureCard 
               icon={FileText} 
