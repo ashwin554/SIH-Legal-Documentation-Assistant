@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Save, Download, Bold, Italic, List, Heading, Bot } from 'lucide-react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { api } from '../utils/api';
+import { marked } from 'marked';
 
 const DocumentEditor = () => {
   const { id } = useParams();
@@ -12,6 +13,8 @@ const DocumentEditor = () => {
   const [saving, setSaving] = useState(false);
   const [title, setTitle] = useState('');
   const [status, setStatus] = useState('draft');
+  const [aiReview, setAiReview] = useState('');
+  const [reviewing, setReviewing] = useState(false);
   const editorRef = useRef(null);
 
   useEffect(() => {
@@ -58,10 +61,10 @@ const DocumentEditor = () => {
     try {
       const blob = await api.documents.exportPDF(id);
       const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
+      const a = window.document.createElement('a');
       a.href = url;
       a.download = `${title}.pdf`;
-      document.body.appendChild(a);
+      window.document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
     } catch (err) {
@@ -70,8 +73,22 @@ const DocumentEditor = () => {
   };
 
   const execCommand = (cmd, arg = null) => {
-    document.execCommand(cmd, false, arg);
+    window.document.execCommand(cmd, false, arg);
     editorRef.current.focus();
+  };
+
+  const handleReview = async () => {
+    setReviewing(true);
+    try {
+      const content = editorRef.current.innerText || editorRef.current.textContent;
+      const res = await api.ai.review({ content });
+      setAiReview(res.suggestions);
+    } catch (err) {
+      console.error(err);
+      alert('Failed to review document.');
+    } finally {
+      setReviewing(false);
+    }
   };
 
   if (loading) return <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><LoadingSpinner /></div>;
@@ -136,16 +153,16 @@ const DocumentEditor = () => {
           </h3>
         </div>
         <div className="sidebar-content">
-          <div className="ai-suggestion-card">
-            <p><strong>Enhance clause</strong></p>
-            <p style={{ color: 'var(--text-secondary)' }}>The confidentiality clause could be made more specific regarding digital assets.</p>
-            <button className="btn btn-secondary" style={{ padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>Apply</button>
-          </div>
-          <div className="ai-suggestion-card">
-            <p><strong>Missing Jurisdiction</strong></p>
-            <p style={{ color: 'var(--text-secondary)' }}>You have not specified the governing law for this contract.</p>
-            <button className="btn btn-secondary" style={{ padding: '0.25rem 0.75rem', fontSize: '0.8rem' }}>Fix</button>
-          </div>
+          {!aiReview ? (
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>Get AI-powered review of your document to identify missing clauses and risks.</p>
+              <button onClick={handleReview} className="btn btn-accent" disabled={reviewing}>
+                {reviewing ? 'Analyzing...' : 'Analyze Document'}
+              </button>
+            </div>
+          ) : (
+            <div className="ai-suggestion-card markdown-body" style={{ background: 'transparent', padding: 0 }} dangerouslySetInnerHTML={{ __html: marked.parse(aiReview) }} />
+          )}
         </div>
       </aside>
     </div>
