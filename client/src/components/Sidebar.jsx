@@ -9,7 +9,7 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <span className="gradient-text">Nyaya</span>Sahayak
+        <span className="gradient-text">Nayay</span> Shala
       </div>
       
       <nav className="sidebar-nav">

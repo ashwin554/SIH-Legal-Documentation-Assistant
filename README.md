@@ -1,4 +1,4 @@
-# ⚖️ NyayaSahayak — AI-Powered Legal Documentation Assistant
+# ⚖️ Nayay Shala — AI-Powered Legal Documentation Assistant
 
 <div align="center">
 
