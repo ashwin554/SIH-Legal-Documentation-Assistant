@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, AlertTriangle } from 'lucide-react';
+import { Send, AlertTriangle, FileText } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import ChatMessage from '../components/ChatMessage';
 import { api } from '../utils/api';
+import { marked } from 'marked';
 
 const LegalQA = () => {
+  const navigate = useNavigate();
   const [messages, setMessages] = useState([
     { role: 'assistant', content: 'Hello. I can answer general questions about Indian law, corporate compliance, and legal procedures. What would you like to know?' }
   ]);
@@ -46,6 +49,25 @@ const LegalQA = () => {
     }
   };
 
+  const handleSaveDocument = async () => {
+    try {
+      const draftContent = messages
+        .filter(m => m.role === 'assistant')
+        .map(m => marked.parse(m.content))
+        .join('<hr/>');
+        
+      const res = await api.documents.create({
+        title: 'Q&A Document',
+        content: draftContent,
+        status: 'draft'
+      });
+      navigate(`/documents/${res.id || res._id}`);
+    } catch (err) {
+      alert('Mock mode: Redirecting to dashboard...');
+      navigate('/dashboard');
+    }
+  };
+
   const suggestions = [
     "What are the requirements for a valid NDA in India?",
     "How to register a Private Limited Company?",
@@ -82,6 +104,14 @@ const LegalQA = () => {
                   {s}
                 </button>
               ))}
+            </div>
+          )}
+
+          {messages.length > 2 && !isTyping && (
+            <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+              <button onClick={handleSaveDocument} className="btn btn-accent">
+                <FileText size={18} /> Save as Document
+              </button>
             </div>
           )}
 
